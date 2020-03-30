@@ -17,7 +17,7 @@ This version of Altitude introduces Buy.Metrixcoin.com integration to allow the 
 - Added market price graph to dashboard.
 - Added support for fiat display currencies.
 - Added ability to create local Masternode within Altitude
-- Added ability to add remote Masterodes to Altitude without restarting metrixd
+- Added ability to add remote Masterodes to Altitude without restarting velesd
 - Add `--multi-instance` startup flag for Altitude to run multiple instances
 
 ### Bug Fixes

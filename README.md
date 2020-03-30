@@ -39,7 +39,7 @@ npm install
 npm start
 ```
 
-By default Altitude will download the latest metrixd binary and run it internally. You can connect your own metrixd binary by running it before starting the wallet.
+By default Altitude will download the latest velesd binary and run it internally. You can connect your own velesd binary by running it before starting the wallet.
 
 ### Development Commands
 

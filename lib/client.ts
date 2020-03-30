@@ -18,7 +18,7 @@ const sleep = require('util').promisify(setTimeout)
 export default class Client {
     // client details
     clientsLocation = path.join(app.getPath('userData'), 'clients');
-    clientName = 'metrixd';
+    clientName = 'velesd';
     clientConfigLocation = ''
     clientDataDir = '';
     clientConfig: ClientConfig;
@@ -51,8 +51,8 @@ export default class Client {
     }
 
     getClientConfigLocation() {
-        const confName = 'metrix.conf';
-        const dataDir = 'metrix';
+        const confName = 'veles.conf';
+        const dataDir = 'veles';
         if (os.platform() === 'win32') {
             this.clientDataDir = path.join(app.getPath('userData'), '../', dataDir);
         } else if (os.platform() === 'linux') {
@@ -206,7 +206,7 @@ export default class Client {
         // try to get remote file for updates. Skip this if we are restarted the client
         if (!restart) {
             try {
-                const res: any = await helpers.getRequest("https://raw.githubusercontent.com/thelindaprojectinc/altitude/master/clientBinaries.json");
+                const res: any = await helpers.getRequest("https://raw.githubusercontent.com/mdfkbtc/altitude/master/clientBinaries.json");
                 let remoteClientBinaries = JSON.parse(res.body);
                 if (compareVersions(remoteClientBinaries[this.clientName].version, clientBinaries[this.clientName].version) > 0) {
                     clientBinaries = remoteClientBinaries;
@@ -320,7 +320,7 @@ export default class Client {
     runClient(bin, startupCommands = []) {
         // check for invalid masternode setup
         if (!this.clientConfigFile.hasValidMasternodeSetup) {
-            log.error("Client", "Invalid masternode configuration. Please check your metrix.conf file");
+            log.error("Client", "Invalid masternode configuration. Please check your veles.conf file");
             this.setClientStatus(ClientStatus.INVALIDMASTERNODECONFIG);
             return;
         }

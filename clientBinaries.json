@@ -1,41 +1,44 @@
 {
-    "metrixd": {
-        "version": "3.4.7.0",
+    "velesd": {
+        "version": "0.18.1.3",
         "win32": {
             "x64": {
                 "download": {
-                    "url": "https://lindaproject.nyc3.digitaloceanspaces.com/metrix/metrixd/3.4.7.0-76e2476/metrixd-win32-x64.exe",
+                    "url": "https://lindaproject.nyc3.digitaloceanspaces.com/metrix/velesd/3.4.7.0-76e2476/velesd-win32-x64.exe",
                     "sha256": "BC4FFFA09E4660AC1B6AB7E15DE66240C53029BCD48D1C0294209AAE7A3BAEC1"
                 },
-                "bin": "metrixd.exe"
+                "bin": "velesd.exe"
             },
             "ia32": {
                 "download": {
-                    "url": "https://lindaproject.nyc3.digitaloceanspaces.com/metrix/metrixd/3.4.7.0-76e2476/metrixd-win32-x86.exe",
+                    "url": "https://lindaproject.nyc3.digitaloceanspaces.com/metrix/velesd/3.4.7.0-76e2476/velesd-win32-x86.exe",
                     "sha256": "793B59E43F2898FDA9F676A84D81486CC35949AB7CA7E4CD8E6C3BF449D9F7EA"
                 },
-                "bin": "metrixd.exe"
+                "bin": "velesd.exe"
             }
         },
         "linux": {
             "x64": {
                 "download": {
-                    "url": "https://lindaproject.nyc3.digitaloceanspaces.com/metrix/metrixd/3.4.7.0-76e2476/metrixd-linux-x64",
-                    "sha256": "197C9F2635277C6ED099D938F9A7C27B36CE4A4A3858CFD749311CE07713CC4E"
+                    "url": "https://github.com/mdfkbtc/veles-mdfkbtc/releases/download/0.18.x.1/velesd",
+                    "sha256": "56aa004f541492f167e8607b05656f4d"
                 },
-                "bin": "metrixd"
+                "bin": "velesd"
             }
         },
         "darwin": {
             "x64": {
                 "download": {
-                    "url": "https://lindaproject.nyc3.digitaloceanspaces.com/metrix/metrixd/3.4.7.0-76e2476/metrixd-darwin-x64",
+                    "url": "https://lindaproject.nyc3.digitaloceanspaces.com/metrix/velesd/3.4.7.0-76e2476/velesd-darwin-x64",
                     "sha256": "B0E115634F86ECC44B175F54AA57612CD4DEAE1F7D216725193C258DECB5F28E"
                 },
-                "bin": "metrixd"
+                "bin": "velesd"
             }
         },
         "versions": {
+            "0.18.1.3": [
+                "56aa004f541492f167e8607b05656f4d",
+            ],
             "3.4.7.0": [
                 "BC4FFFA09E4660AC1B6AB7E15DE66240C53029BCD48D1C0294209AAE7A3BAEC1",
                 "793B59E43F2898FDA9F676A84D81486CC35949AB7CA7E4CD8E6C3BF449D9F7EA",
