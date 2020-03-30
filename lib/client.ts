@@ -41,7 +41,7 @@ export default class Client {
     // client status
     status: ClientStatus = ClientStatus.INITIALISING;
     // when using hash of unknown daemon assume version
-    readonly assumeClientVersion = '3.4.0.0';
+    readonly assumeClientVersion = '0.18.1.3';
 
     constructor(win) {
         this.win = win;
