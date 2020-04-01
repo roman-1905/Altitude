@@ -9,7 +9,7 @@ export class CurrencyService {
     public marketLoadFailed = false;
     public market;
     public currencies = [];
-    private selectedCurrency = 'MRX';
+    private selectedCurrency = 'VLS';
 
 
     @Output() currencyChange: EventEmitter<any> = new EventEmitter();
@@ -22,14 +22,14 @@ export class CurrencyService {
 
     public get currency() {
         if (this.currencies.length) return this.selectedCurrency
-        return 'MRX';
+        return 'VLS';
     }
 
     private async getMarket() {
         this.marketLoadFailed = false;
-        this.http.get(`https://api.coingecko.com/api/v3/coins/linda`)
+        this.http.get(`https://api.coingecko.com/api/v3/coins/veles`)
             .subscribe((data: any) => {
-                this.currencies = ['MRX'];
+                this.currencies = ['VLS'];
                 Object.keys(data.market_data.current_price).forEach(key => {
                     this.currencies.push(key.toUpperCase());
                 });
@@ -43,7 +43,7 @@ export class CurrencyService {
 
     public async getMarketChart(period: number) {
         return new Promise((resolve, reject) => {
-            this.http.get(`https://api.coingecko.com/api/v3/coins/linda/market_chart?vs_currency=BTC&days=${period}`)
+            this.http.get(`https://api.coingecko.com/api/v3/coins/veles/market_chart?vs_currency=BTC&days=${period}`)
                 .subscribe((data: any) => {
                     resolve(data.prices);
                 }, error => {
@@ -58,7 +58,7 @@ export class CurrencyService {
     }
 
     public convert(amount, parseSatoshi = false) {
-        if (this.market && this.currency !== 'MRX') {
+        if (this.market && this.currency !== 'VLS') {
             let key = this.currency.toLowerCase();
             let price = new Big(this.market.market_data.current_price[key]);
             let value = parseSatoshi ? Helpers.fromSatoshi(amount) : amount;

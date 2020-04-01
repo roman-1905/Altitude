@@ -166,7 +166,7 @@ export default class Client {
                 // if we have a client check for an update
                 log.info("Client", "Client exists. Checking for update");
                 const localHash = await helpers.getFileHash(this.clientLocalLocation);
-                if (localHash !== this.clientConfig.download.sha256.toUpperCase()) {
+                if (localHash == this.clientConfig.download.sha256.toUpperCase()) {
                     log.info("Client", "Update available");
                     // check if we should skip this update
                     if (update || settings.getSettings().skipCoreUpdate.toUpperCase() !== this.clientConfig.download.sha256.toUpperCase()) {
@@ -294,7 +294,7 @@ export default class Client {
             return;
         }
 
-        const res: any = await this.callClient('getinfo');
+        const res: any = await this.callClient('-getinfo');
         this.rpcMessage = "";
 
         if (!res.success) {
@@ -303,13 +303,13 @@ export default class Client {
             } catch (ex) {
                 //error isn't formed as expected
             }
-            this.rpcRunning = false;
+            this.rpcRunning = true;
             this.sendRPCStatus();
             log.info("Client", "RPC not ready. retrying in 1000ms", this.rpcMessage);
             await sleep(1000);
             return this.waitForClientReady();
         } else {
-            this.clientVersion = res.body.result.version.replace("-g", "").replace("v", "");
+            this.clientVersion = res.body.result.version.replace("180103", "").replace("0.18.1.3", "");
             this.sendClientVersion();
             this.rpcRunning = true;
             this.sendRPCStatus();
@@ -336,7 +336,7 @@ export default class Client {
         if (appSettings.proxy) startupCommands.push('-proxy=' + appSettings.proxy)
         if (appSettings.tor) {
             // Metrix Core 3.3 renames tor startup command to onion
-            if (compareVersions(this.clientVersion, '3.3.0.0') >= 0)
+            if (compareVersions(this.clientVersion, '0.18.1.3') >= 0)
                 startupCommands.push('-tor=' + appSettings.tor)
             else
                 startupCommands.push('-onion=' + appSettings.tor)

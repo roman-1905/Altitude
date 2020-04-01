@@ -137,7 +137,7 @@ export class ElectronService {
 
   public checkForWalletUpdate(showSkip = true) {
     return new Promise((resolve, reject) => {
-      const walletUpdateUrl = 'https://api.github.com/repos/thelindaprojectinc/altitude/releases/latest';
+      const walletUpdateUrl = 'https://api.github.com/repos/velescore/altitude/releases/latest';
       this.http.get<any>(walletUpdateUrl).subscribe(remoteData => {
         const appVersion = this.remote.app.getVersion();
         if ((!showSkip || this.settings.skipWalletUpdate !== remoteData.tag_name) && compareVersions(remoteData.tag_name, appVersion) > 0) {

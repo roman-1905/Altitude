@@ -266,7 +266,7 @@ export class RpcService {
         // get addresses
         let addresses: any;
         // as of v3.4 listreceivedbyaddress now has a includeWatchonly flag
-        if (compareVersions(this.electron.clientVersion, '3.4.0.0') >= 0)
+        if (compareVersions(this.electron.clientVersion, '0.18.1.3') >= 0)
             addresses = await this.callServer("listreceivedbyaddress", [0, true, true]);
         else
             addresses = await this.callServer("listreceivedbyaddress", [0, true]);
@@ -357,7 +357,7 @@ export class RpcService {
     }
 
     private async getWalletInfo() {
-        let data: any = await this.callServer("getinfo");
+        let data: any = await this.callServer("-getinfo");
 
         if (!this.isUsingEncryption)
             this.encryptionStatus = data.result.encryption_status
@@ -476,7 +476,7 @@ export class RpcService {
     }
 
     private get canSendUnsafeTransaction() {
-        return compareVersions(this.electron.clientVersion, '3.3.1.0') >= 0
+        return compareVersions(this.electron.clientVersion, '0.18.1.3') >= 0
     }
 
     private isUnsafeAmount(amount: number | Big) {
@@ -510,7 +510,7 @@ export class RpcService {
         // load all transactions
         let data: any;
         // as of v3.4 listtransactions now has a includeWatchonly flag
-        if (compareVersions(this.electron.clientVersion, '3.4.0.0') >= 0)
+        if (compareVersions(this.electron.clientVersion, '0.18.1.3') >= 0)
             data = await this.callServer('listtransactions', ['*', count, from, true])
         else
             data = await this.callServer('listtransactions', ['*', count, from])
