@@ -1,0 +1,42 @@
+<div class="navbar">
+
+    <div class="navbar-navigate">
+        <!-- Balance -->
+        <div class="navbar-brand">
+                <img id="icon" src="assets/img/veles-logo.png">
+                <div id="brand-text"> Veles</div>
+        </div>
+        <!-- Balance -->
+        <!--
+        <h3>{{ 'MISC.BALANCE' | translate | uppercase }}</h3>
+        <span>
+            {{currencyService.convert(wallet.balance)}}
+            <span class="balance-currency">{{currencyService.currency}}</span>
+        </span>
+    	-->
+        <!-- Menu -->
+        <ul routerLinkActive="active">
+            <li>
+                <a routerLink="/metrix" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    {{ 'COMPONENTS.SIDEBAR.DASHBOARD' | translate }}
+                </a>
+            </li>
+            <li>
+                <a routerLink="/metrix/send" routerLinkActive="active">
+                    {{ 'COMPONENTS.SIDEBAR.SEND' | translate }}
+                </a>
+            </li>
+            <li>
+                <a routerLink="/metrix/transactions" routerLinkActive="active">
+                    {{ 'COMPONENTS.SIDEBAR.TRANSACTIONS' | translate }}
+                </a>
+            </li>
+            <li>
+                <a routerLink="/metrix/masternodes" routerLinkActive="active">
+                    {{ 'COMPONENTS.SIDEBAR.MASTERNODES' | translate }}
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+</div>

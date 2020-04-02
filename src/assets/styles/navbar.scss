@@ -1,0 +1,76 @@
+.navbar {
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 61px;
+    background: $navbar-color;
+
+    .navbar-navigate {
+        height: 61px;
+        display: flex;
+    }
+
+    .navbar-brand {
+        font-weight: bold;
+        color: $font-primary;
+        width: 120px;
+        margin-right: auto;
+        margin-left: auto;
+        
+        #icon {
+            height: 34px;
+            margin-top: 13px;
+            margin-left: 5px;
+        }
+
+        div#brand-text {
+            margin-left: 10px;
+            position: absolute;
+            font-size: 23px;
+            display: inline;
+            top: 17px;
+        }
+
+        &:hover,
+        &:active {
+            border-bottom: 2px solid $veles-orange;
+            background-color: rgba(100, 100, 100, 0.3);
+        }
+        
+        &.active {
+            border-bottom: 2px solid $veles-brown;
+        }
+    }
+
+    ul {
+        display: flex;
+        flex-direction: row;
+        margin-right: auto;
+        padding: 0;
+        list-style: none;
+        list-style-image: none;
+        margin-top: 0px;
+        margin-bottom: 0px;
+
+        a {
+            color: $font-primary;
+            display: block;
+            padding: 20px;
+            text-decoration: none;
+            opacity: 1;
+            transition: opacity 1s ease-in-out;
+        
+
+            &:hover,
+            &:active {
+                border-bottom: 2px solid $veles-orange;
+                background-color: rgba(100, 100, 100, 0.3);
+            }
+            &.active {
+                border-bottom: 2px solid $veles-brown;
+            }
+        }
+    }    
+}
