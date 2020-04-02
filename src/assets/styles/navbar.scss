@@ -36,13 +36,28 @@
         &:hover,
         &:active {
             border-bottom: 2px solid $veles-orange;
-            background-color: rgba(100, 100, 100, 0.3);
+            background-color: $veles-grey;
         }
         
         &.active {
             border-bottom: 2px solid $veles-brown;
         }
     }
+
+    .navbar-balance {
+        background: #262626b8;
+        border: 1px solid $veles-grey;
+        border-radius: 2px;
+        padding: 15px 20px 20px 20px;
+        display: flex;
+        margin: 5px auto 5px 5px;
+
+        .balance-bar {
+            font-weight: bold;
+            margin-left: 10px;
+            color: $veles-orange;
+        }
+    }    
 
     ul {
         display: flex;
@@ -66,7 +81,7 @@
             &:hover,
             &:active {
                 border-bottom: 2px solid $veles-orange;
-                background-color: rgba(100, 100, 100, 0.3);
+                background-color: $veles-grey;
             }
             &.active {
                 border-bottom: 2px solid $veles-brown;

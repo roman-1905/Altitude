@@ -7,13 +7,13 @@
                 <div id="brand-text"> Veles</div>
         </div>
         <!-- Balance -->
-        <!--
-        <h3>{{ 'MISC.BALANCE' | translate | uppercase }}</h3>
-        <span>
-            {{currencyService.convert(wallet.balance)}}
-            <span class="balance-currency">{{currencyService.currency}}</span>
-        </span>
-    	-->
+        <div class="navbar-balance">
+            <div>{{ 'MISC.BALANCE' | translate | uppercase }}:</div>
+            <span class="balance-bar">
+                {{currencyService.convert(wallet.balance)}}
+                <span class="balance-currency">{{currencyService.currency}}</span>
+            </span>
+        </div>    
         <!-- Menu -->
         <ul routerLinkActive="active">
             <li>
