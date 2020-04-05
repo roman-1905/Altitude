@@ -5,15 +5,7 @@
         <div class="navbar-brand">
                 <img id="icon" src="assets/img/veles-logo.png">
                 <div id="brand-text"> Veles</div>
-        </div>
-        <!-- Balance -->
-        <div class="navbar-balance">
-            <div>{{ 'MISC.BALANCE' | translate | uppercase }}:</div>
-            <span class="balance-bar">
-                {{currencyService.convert(wallet.balance)}}
-                <span class="balance-currency">{{currencyService.currency}}</span>
-            </span>
-        </div>    
+        </div>  
         <!-- Menu -->
         <ul routerLinkActive="active">
             <li>

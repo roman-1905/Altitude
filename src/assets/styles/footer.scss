@@ -1,0 +1,115 @@
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    z-index: 1000;
+    background: $navbar-color;
+
+    sync-status {
+    display: flex;
+
+	    .wallet-sync {
+	    	margin-top: 10px;
+	    	margin-left: auto;
+	    	margin-right: 10px;
+
+	    	.wallet-sync-section {
+	    		margin-right: 15px;
+	    	}
+
+	    	.wallet-status {
+	 		    display: inline;
+	    		margin-right: 10px;
+			}
+		}
+
+		.wallet-sync-progress-bar {
+	    	margin-left: auto;
+	    	margin-top: 10px;
+	    	border-radius: 5px;
+
+	    	progress {
+	    		height: 20px;
+	    	}
+		}
+
+		.footer-follow-wide {
+    		display: block;
+    		margin-top: -47px;
+    		height: 110px;
+    		margin-left: 30px;
+    		float: left;
+
+    		ul.osx-dock {
+    			display: inline-block;
+    			height: 110px;
+    			padding: 0 40px 0 0;
+    			/* overflow: hidden; */
+    			margin: 0;
+
+    			li {
+				    display: block;
+				    position: relative;
+				    float: left;
+				    width: 35px;
+				    height: 25px;
+				    margin: 50px 0 4px 0;
+				    -webkit-transition: 0.15s linear;
+				    -webkit-transition-property: -webkit-transform margin;
+				    text-align: center;
+
+				    &:hover,
+				    &:active {
+    					margin-left: 9px;
+    					margin-right: 9px;
+    					z-index: 200;
+    					box-shadow: 0 0 30px rgba(0,0,0,0.5), 0 0 50px rgba(0,0,0,0.5);
+					}
+
+				    span {
+					    background: rgba(0,0,0,0.75);
+					    position: absolute;
+					    bottom: 40px;
+					    /* margin: 0 auto; */
+					    margin-left: -37%;
+					    display: none;
+					    width: auto;
+					    font-size: 11px;
+					    font-weight: bold;
+					    padding: 3px 6px;
+					    -webkit-border-radius: 6px;
+					    color: #fff;
+
+					    &:hover
+					    &:active {
+ 							display: block;
+						}
+					}
+
+					a {
+					    display: block;
+					    height: 30px;
+					    padding: 0 1px;
+					    margin: 0;
+
+					    &:hover,
+					    &:active {
+							-webkit-transform-origin: center bottom;
+							-webkit-transform: scale(1.5);
+						}
+					}
+					
+					.fab {
+					    margin-right: 5px;
+					    font-size: 25px;
+					    margin-top: 4px;
+					    background: -webkit-linear-gradient(45deg,#262626, #e4b99c);
+					    -webkit-background-clip: text;
+					    -webkit-text-fill-color: transparent;
+					}
+				}
+			}
+		}
+	}	
+}    
