@@ -99,8 +99,8 @@ export class MarketPriceComponent {
       gradientStroke.addColorStop(0, "#101010bb");
       gradientStroke.addColorStop(1, "#101010bb");
       let borderGradientStroke = ctx.createLinearGradient(500, 0, 100, 0);
-      borderGradientStroke.addColorStop(0, "#F19B7E");
-      borderGradientStroke.addColorStop(1, "#F19B7Ebb");
+      borderGradientStroke.addColorStop(0, "#E4B99C");
+      borderGradientStroke.addColorStop(1, "#E4B99Cbb");
 
       this.priceChart = new Chart(ctx, {
         type: 'line',
@@ -110,6 +110,7 @@ export class MarketPriceComponent {
             {
               backgroundColor: gradientStroke,
               borderColor: borderGradientStroke,
+              border: '2px',
               pointRadius: 0,
               data: incomeData
             }

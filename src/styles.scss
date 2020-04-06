@@ -76,6 +76,10 @@ h2 {
     }
 }
 
+hr {
+    border-color: #E4B99Cbb;
+}
+
 a {
     -webkit-user-drag: none;
 }
@@ -135,7 +139,7 @@ a {
 }
 
 .account {
-    background-color: $background-accent;
+    background-color: $veles-content-background;
     min-width: 260px;
     border-radius: 6px;
     margin-top: 10px;
@@ -182,7 +186,7 @@ a {
         padding: 0 10px;
         padding-right: 0;
         margin: 0px;
-        color: $color-primary;
+        color: $veles-orange;
         font-size: 16px;
         line-height: 1.8;
 
@@ -200,7 +204,7 @@ a {
         font-weight: normal;
         line-height: 1.8;
     }
-
+/*
     .wave {
         height: 100%;
         width: 100%;
@@ -241,6 +245,7 @@ a {
         left: -5%;
         top: -70%;
     }
+*/
 }
 
 .account-identicon {
@@ -251,7 +256,7 @@ a {
 
 
     canvas {
-        background: $background-primary;
+        background: #101010bb;
         border-radius: 99px;
         padding: 6px;
     }
@@ -292,6 +297,7 @@ a {
             padding-left: 0;
             text-align: right;
             z-index: 1;
+            font-weight: bolder;
 
             .small {
                 font-size: 12px;
@@ -355,7 +361,15 @@ a {
         background-position: right bottom;
     }
 }
-
+// Dashboard Content
+.background-card{
+    height: 100%;
+    background: $veles-content-background;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,.5);
+    border-radius: 6px;
+    padding: 0 2px 15px 0;
+    overflow: hidden;
+}
 // maanage account
 .manage-account-wrapper {
     display: flex;
@@ -499,13 +513,17 @@ input[type="text"] {
 
 // titlebar
 // send
+.send-layout {
+    height: 100%;
+    padding:10px 20px 0 20px;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: auto auto 25fr 9fr;
+}
+
 .toolbar-bottom {
-    position: fixed;
-    bottom: 0;
-    left: $sidebar-padding;
-    right: 0;
     padding: 10px;
-    background: $background-primary;
+    margin-top: 20px;
 
     input:not([type]),
     input[type="email"],
@@ -518,24 +536,37 @@ input[type="text"] {
     }
 }
 
-.send-recipients {
-    margin-bottom: 150px;
-}
+.recipients-scroll-layout {
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-radius: 7px;
 
-.send-recipient {
-    position: relative;
-    margin-bottom: 5px;
-    padding-top: 35px;
+    .send-recipients {
+        margin-bottom: 10px;
+        margin-top: 5px;
+        margin-right: 5px;
+        padding-bottom: 10px;
+    }
 
-    .close {
-        position: absolute;
-        right: 0;
-        top: 0;
+    .send-recipient {
+        position: relative;
+        margin-bottom: 5px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        border-bottom: 1px solid #E4B99Cbb;
+
+        .close {
+            position: absolute;
+            right: -15px;
+            top: -15px;
+        }
     }
 }
 
 .send-source {
-    margin-bottom: 50px;
+    margin-bottom: 10px;
+    padding-bottom: 20px;
 
     h4 {
         margin-top: 1em;

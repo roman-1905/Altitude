@@ -15,19 +15,18 @@ input[type="checkbox"] {
         border-radius: 99px;
         width: 20px;
         height: 20px;
-        background: $font-primary;
+        background: $veles-brown;
     }
     &:hover+label:before {
-        background: $color-accent;
+        background: $veles-orange;
     }
     &:focus+label:before {
         box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12);
     }
     &:checked+label:before {
-        background: $color-accent;
+        background: $veles-content-background;
     }
     &:disabled+label {
-        color: #b8b8b8;
         cursor: auto;
     }
     &:disabled+label:before {
@@ -39,7 +38,6 @@ input[type="checkbox"] {
         position: absolute;
         left: 5px;
         top: 9px;
-        background: $font-primary;
         width: 2px;
         height: 2px;
         box-shadow: 2px 0 0 $font-primary, 4px 0 0 $font-primary, 4px -2px 0 $font-primary, 4px -4px 0 $font-primary, 4px -6px 0 $font-primary, 4px -8px 0 $font-primary;

@@ -7,7 +7,7 @@
 
   <metrix-main-chain-check></metrix-main-chain-check>
 
-  <div class="dashboard-card">
+  <div class="background-card">
     <div class="dashboard-layout">
       
       <div class="account-layout">
@@ -20,25 +20,22 @@
           </span>
         </div>
         <!-- Accounts -->
+        <h1>{{ 'PAGES.DASHBOARD.ACCOUNTS' | translate }}</h1>
         <div class="account-header">
-          <h1>{{ 'PAGES.DASHBOARD.ACCOUNTS' | translate }}</h1>
           <button class="btn btn-default" (click)="showNewAccountModal()">
               <fa-icon icon="plus"></fa-icon>
               {{ 'PAGES.DASHBOARD.ADDACCOUNT' | translate }}
           </button>
-        </div>
-        <div>
           <input id="chkShowEmpty" [(ngModel)]="wallet.accountFilters.hideEmptyAccounts" type='checkbox' />
           <label for="chkShowEmpty">{{ 'PAGES.DASHBOARD.HIDEEMPTYACCOUNTS' | translate }}</label>
-        </div></br>  
-        <metrix-accounts style="height: 100%; overflow-y: scroll; overflow-x: hidden;"></metrix-accounts>
+        </div>  
+        <metrix-accounts style="height: 100%; overflow-y: auto; overflow-x: hidden; margin-top: 2%;"></metrix-accounts>
       </div>
-      
       <div class="transaction-layout">
-      
+        <!-- Price Chart -->
         <h1>Price Chart</h1> <!-- TODO: Translation --> 
         <market-price-chart></market-price-chart>
-      
+        <!-- Transactions -->
         <h1>{{ 'PAGES.DASHBOARD.TRANSACTIONS' | translate }}</h1>
         <div class="transactions">
           <transaction-row *ngFor="let trx of displayTransactions()" [trx]="trx"></transaction-row>
