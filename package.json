@@ -33,7 +33,9 @@
     "electron:windows32": "npm run build:prod && electron-builder build --windows --ia32",
     "electron:mac": "npm run build:prod && electron-builder build --mac",
     "test": "npm run postinstall:web && ng test",
-    "e2e": "npm run postinstall:web && ng e2e"
+    "e2e": "npm run postinstall:web && ng e2e",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "dependencies": {
     "@fortawesome/angular-fontawesome": "^0.3.0",
@@ -50,7 +52,8 @@
     "public-ip": "^3.1.0",
     "request": "^2.88.0",
     "unzipper": "^0.10.5",
-    "web-animations-js": "^2.3.1"
+    "web-animations-js": "^2.3.1",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.803.23",
@@ -93,5 +96,6 @@
   },
   "engines": {
     "node": ">=10.9.0"
-  }
+  },
+  "snyk": true
 }
