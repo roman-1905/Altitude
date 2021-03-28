@@ -1,5 +1,5 @@
 <div class="content-card" style="padding: 0;position: relative;">
-    <h1 class="title">MRX/BTC</h1>
+    <h1 class="title">VLS/BTC</h1>
     <div class="chart-buttons">
         <button class="btn btn-sm" (click)="updateChart(1)"
             [ngClass]="{'btn-success':marketPeriod===1,'btn-default':marketPeriod!==1}">
@@ -21,6 +21,6 @@
         </button>
     </div>
     <loader paddingTop="100" paddingBottom="50" *ngIf="loadingChart"></loader>
-    <canvas id="priceChart" style="border-radius: 6px;"
+    <canvas id="priceChart" style="border-radius: 6px; height: calc(61vh / 1.82);"
         [ngStyle]="{'display':loadingChart||chartLoadFailed?'none':'block'}"></canvas>
 </div>

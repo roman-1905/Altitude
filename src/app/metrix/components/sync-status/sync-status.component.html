@@ -1,27 +1,33 @@
-<div class="wallet-sync">
+<div class="footer-follow-wide">
+    <ul class="osx-dock">
+        <li class="active">
+            <span>Bitcointalk</span>
+            <a target="_blank" rel="noopener noreferrer" href="https://bitcointalk.org/index.php?topic=5064523">
+                <i class="fab fa-bitcoin"></i>
+            </a>
+        </li>
+        <li>
+            <span>Twitter</span>
+            <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/velescore">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </li>
+        <li>
+            <span>GitHub</span>
+            <a target="_blank" rel="noopener noreferrer" href="https://github.com/velescore/veles">
+                <i class="fab fa-github"></i>
+            </a>
+        </li>
+        <li>
+            <span>Discord</span>
+            <a target="_blank" rel="noopener noreferrer" href="https://discord.gg/P528fGg">
+                <i class="fab fa-discord"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="wallet-sync-progress-bar">
     <span>
-        <fa-icon icon="wifi"></fa-icon>
-        <span *ngIf="!wallet.running">{{ 'COMPONENTS.SIDEBAR.SYNC.CONNECTING' | translate }}...</span>
-        <span *ngIf="wallet.running && !wallet.walletStatus.connections">
-            {{ 'COMPONENTS.SIDEBAR.SYNC.NOPEERS' | translate }}...
-        </span>
-        <span *ngIf="wallet.running && wallet.walletStatus.connections">{{wallet.walletStatus.connections}}
-            {{'COMPONENTS.SIDEBAR.SYNC.PEERS' | translate }}
-        </span>
-    </span>
-    <span>
-        <fa-icon icon="layer-group"></fa-icon>
-        <span *ngIf="!wallet.running">{{ 'COMPONENTS.SIDEBAR.SYNC.CONNECTING' | translate }}...</span>
-        <span *ngIf="wallet.running && !wallet.blockchainStatus.latestBlockHeight">
-            {{ 'COMPONENTS.SIDEBAR.SYNC.NOBLOCKS' | translate }}...
-        </span>
-        <span *ngIf="wallet.running && wallet.blockchainStatus.latestBlockHeight">
-            {{helpers.prettyCoins(wallet.blockchainStatus.latestBlockHeight)}} {{ 'COMPONENTS.SIDEBAR.SYNC.BLOCKS' |
-            translate }}
-        </span>
-    </span>
-    <span>
-        <fa-icon icon="clock"></fa-icon>
         <span *ngIf="!wallet.running">{{ 'COMPONENTS.SIDEBAR.SYNC.CONNECTING' | translate }}...</span>
         <!--   no blocks -->
         <span *ngIf="wallet.running && !wallet.blockchainStatus.latestBlockHeight">
@@ -39,10 +45,31 @@
             [value]="wallet.blockchainStatus.syncProgresss"></progress>
     </span>
 </div>
-<div class="wallet-status">
-    <fa-icon icon='{{lockStatus.icon}}' class='{{lockStatus.class}}' title='{{lockStatus.title | translate}}'></fa-icon>
-    <fa-icon *ngIf="wallet.stakingStatus.enabled" icon='{{stakingStatus.icon}}' class='{{stakingStatus.class}}'
+<div class="wallet-sync">
+    <span class="wallet-sync-section">
+        <span *ngIf="!wallet.running">{{ 'COMPONENTS.SIDEBAR.SYNC.CONNECTING' | translate }}...</span>
+        <span *ngIf="wallet.running && !wallet.blockchainStatus.latestBlockHeight">
+            {{ 'COMPONENTS.SIDEBAR.SYNC.NOBLOCKS' | translate }}...
+        </span>
+        <span *ngIf="wallet.running && wallet.blockchainStatus.latestBlockHeight">
+            {{ 'COMPONENTS.SIDEBAR.SYNC.BLOCKS' | translate | uppercase }}: {{helpers.prettyCoins(wallet.blockchainStatus.latestBlockHeight)}} 
+        </span>
+    </span>
+    <span class="wallet-sync-section">
+        <span *ngIf="!wallet.running">{{ 'COMPONENTS.SIDEBAR.SYNC.CONNECTING' | translate }}...</span>
+        <span *ngIf="wallet.running && !wallet.walletStatus.connections">
+            {{ 'COMPONENTS.SIDEBAR.SYNC.NOPEERS' | translate }}...
+        </span>
+        <span *ngIf="wallet.running && wallet.walletStatus.connections">{{wallet.walletStatus.connections}}
+            {{'COMPONENTS.SIDEBAR.SYNC.PEERS' | translate }}
+        </span>
+        <fa-icon icon="wifi"></fa-icon>
+    </span>
+    <div class="wallet-status">
+        <fa-icon icon='{{lockStatus.icon}}' class='{{lockStatus.class}}' title='{{lockStatus.title | translate}}'></fa-icon>
+        <fa-icon *ngIf="wallet.stakingStatus.enabled" icon='{{stakingStatus.icon}}' class='{{stakingStatus.class}}'
         title='{{stakingStatus.title | translate}}'></fa-icon>
-    <fa-icon *ngIf="wallet.masternode.setup" icon='{{masternodeStatus.icon}}' class='{{masternodeStatus.class}}'
-        title='{{masternodeStatus.title | translate}}'></fa-icon>
+        <fa-icon *ngIf="wallet.masternode.setup" icon='{{masternodeStatus.icon}}' class='{{masternodeStatus.class}}'
+            title='{{masternodeStatus.title | translate}}'></fa-icon>
+    </div>
 </div>

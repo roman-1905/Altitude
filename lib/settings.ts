@@ -152,7 +152,7 @@ export class Settings {
     skipWalletUpdate: string = "";
     hideCoinControlFeatures: boolean = true;
     locale: string = "en";
-    currency: string = "MRX";
+    currency: string = "VLS";
     fullScreen: boolean = false;
     hideTrayIcon: boolean = false;
     minimiseToTray: boolean = false;

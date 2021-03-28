@@ -1,16 +1,18 @@
-<div class="content" #scrollingBlock>
+<div class="background-card">
+  <div class="content" #scrollingBlock>
 
-  <div class="title">
-    <h1>{{'PAGES.TRANSACTIONS.TITLE' | translate}}</h1>
+    <div class="title">
+      <h1>{{'PAGES.TRANSACTIONS.TITLE' | translate}}</h1>
 
-    <button class="btn btn-icon btn-default" (click)="copyTransactions()">
-      <fa-icon icon="copy"></fa-icon>
-    </button>
+      <button class="btn btn-icon btn-default" (click)="copyTransactions()">
+        <fa-icon icon="copy"></fa-icon>
+      </button>
+    </div>
+
+    <virtual-scroller #scroll class="transactions" [items]="transactions" [parentScroll]="scrollingBlock"
+      (vsEnd)="fetchMore($event)">
+      <transaction-row *ngFor="let trx of scroll.viewPortItems" [trx]="trx"></transaction-row>
+    </virtual-scroller>
+
   </div>
-
-  <virtual-scroller #scroll class="transactions" [items]="transactions" [parentScroll]="scrollingBlock"
-    (vsEnd)="fetchMore($event)">
-    <transaction-row *ngFor="let trx of scroll.viewPortItems" [trx]="trx"></transaction-row>
-  </virtual-scroller>
-
 </div>

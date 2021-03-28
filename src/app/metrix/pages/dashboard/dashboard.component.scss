@@ -1,31 +1,45 @@
-.layout-outer {
-    display: flex;
-    flex-direction: row
-}
+.dashboard-layout {
+    display: inline-flex;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 
-.layout-lhs {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-}
+    .account-layout {
+        overflow: hidden;
+        width: 50%;
+        padding: 10px 5px 10px 15px;
+        flex-direction: column;
+        display: flex;
 
-metrix-accounts {
-    padding-left: 10px;
-    width: 50%;
-}
-
-@media only screen and (max-width: 1300px) {
-    .layout-outer {
-        flex-direction: column-reverse;
+        .balance-layout {
+            background-color: rgba(38, 38, 38, 0.7);
+            text-align: center;
+            padding: 50px;
+            font-size: 35px;
+            font-weight: bold;
+            color: #F19B7E;
+            border-radius: 6px;
+            margin-bottom: 10px;
+        }
+        .account-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: row-reverse;
+        }
     }
 
-    .layout-lhs {
-        width: 100%;
-    }
+    .transaction-layout {
+        width: 46%;
+        padding: 0 10px 10px 0px;
+        margin: 10px 0 0 20px;
+        flex-direction: column;
+        display: flex;
 
-    metrix-accounts {
-        width: 100%;
-        margin-bottom: 10px;
-        padding-left: 0;
-    }
+        .transactions {
+            overflow-y: auto;
+            overflow-x: hidden;
+            border-radius: 5px;
+        }
+    }    
 }

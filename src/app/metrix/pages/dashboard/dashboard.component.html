@@ -7,23 +7,54 @@
 
   <metrix-main-chain-check></metrix-main-chain-check>
 
-  <div class="layout-outer">
-
-    <div class="layout-lhs">
-
-      <market-price-chart></market-price-chart>
-
-      <div class="content-card" style="margin: 10px 0;">
+  <div class="background-card">
+    <div class="dashboard-layout">
+      
+      <div class="account-layout">
+        <!-- Balance -->
+        <h1>Balance</h1> <!-- TODO: Translation -->
+        <div class="balance-layout">
+          <span>
+              {{currencyService.convert(wallet.balance)}}
+              <span class="balance-currency">{{currencyService.currency}}</span>
+          </span>
+        </div>
+        <!-- Accounts -->
+        <h1>{{ 'PAGES.DASHBOARD.ACCOUNTS' | translate }}</h1>
+        <div class="account-header">
+          <button class="btn btn-default" (click)="showNewAccountModal()">
+              <fa-icon icon="plus"></fa-icon>
+              {{ 'PAGES.DASHBOARD.ADDACCOUNT' | translate }}
+          </button>
+          <input id="chkShowEmpty" [(ngModel)]="wallet.accountFilters.hideEmptyAccounts" type='checkbox' />
+          <label for="chkShowEmpty">{{ 'PAGES.DASHBOARD.HIDEEMPTYACCOUNTS' | translate }}</label>
+        </div>  
+        <metrix-accounts style="height: 100%; overflow-y: auto; overflow-x: hidden; margin-top: 2%;"></metrix-accounts>
+      </div>
+      <div class="transaction-layout">
+        <!-- Price Chart -->
+        <h1>Price Chart</h1> <!-- TODO: Translation --> 
+        <market-price-chart></market-price-chart>
+        <!-- Transactions -->
         <h1>{{ 'PAGES.DASHBOARD.TRANSACTIONS' | translate }}</h1>
         <div class="transactions">
           <transaction-row *ngFor="let trx of displayTransactions()" [trx]="trx"></transaction-row>
-        </div>
+        </div>        
       </div>
 
     </div>
-
-    <metrix-accounts></metrix-accounts>
-
   </div>
 
-</div>
+  <!-- Add account modal -->
+  <ngx-smart-modal #addAccountModal identifier="addAccountModal" customClass="nsm-centered" [closable]="false">
+      <h1>{{ 'PAGES.DASHBOARD.CREATEACCOUNTTITLE' | translate }}</h1>
+      <text-input [(inputModel)]="newAccountLabel" placeholder="{{ 'MISC.ENTERACCOUNTLABEL' | translate }}"></text-input>
+      <div class="modal-buttons">
+          <button class="btn btn-default" (click)="addAccountModal.close()">{{ 'MISC.CANCELBUTTON' | translate }}</button>
+          <button class="btn btn-default" (click)="createNewAccount()">
+              {{ 'PAGES.DASHBOARD.CREATEACCOUNTBUTTON' | translate }}
+          </button>
+      </div>
+  </ngx-smart-modal>
+
+</div>    
