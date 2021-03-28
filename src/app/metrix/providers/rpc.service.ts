@@ -121,10 +121,10 @@ export class RpcService {
                 data = await this.callServer("getstakinginfo");
                 break;
             case RPCMethods.UPDATELABEL:
-                data = await this.callServer("setaccount", params);
+                data = await this.callServer("setlabel", params);
                 break;
             case RPCMethods.NEWADDRESS:
-                data = await this.callServer("getaccountaddress", params);
+                data = await this.callServer("getnewaddress", params);
                 break;
             case RPCMethods.UNLOCK:
                 data = await this.unlockWallet(params[0], this.unlockTimeout, params[1]);
@@ -367,10 +367,10 @@ export class RpcService {
 
     private listUnspent() {
         // as of v3.4 listunspent now has a includeWatchonly flag
-        if (compareVersions(this.electron.clientVersion, '3.4.0.0') >= 0)
+        //if (compareVersions(this.electron.clientVersion, '3.4.0.0') >= 0)
             return this.callServer("listunspent", [1, 9999999, [], 1, true]);
-        else
-            return this.callServer("listunspent", [1, 9999999, [], true]);
+        //else
+            //return this.callServer("listunspent", [1, 9999999, [], true]);
     }
 
     private async createTransaction(params) {

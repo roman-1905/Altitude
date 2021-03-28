@@ -633,7 +633,7 @@ export default class Client {
         let body = 'Description of issue: Please describe the issue with as much information as possible\n\n' +
             'Machine: ' + os.arch() + ' ' + os.platform() + '\n' +
             'Altitude: ' + app.getVersion() + '\n' +
-            'Metrix Core: ' + data.core + '\n' +
+            'Veles Core: ' + data.core + '\n' +
             'Connections: ' + data.connections + '\n' +
             'Blocks: ' + data.blocks + '\n' +
             'Log: ' + logLink
